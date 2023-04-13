@@ -27,6 +27,8 @@ def create_layout(app):
                 html.Br(),
                 off_canvas.off_canvas(app),
                 html.Br(),
+                rating_year.rating_year(app),
+                html.Br(),
                 country_month.country_month_tabs(app),
                 html.Br(),
                 directors_actors.directors_actors_tabs(app),
