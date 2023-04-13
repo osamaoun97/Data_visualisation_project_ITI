@@ -3,11 +3,8 @@ import plotly.express as px
 import pandas as pd
 from collections import Counter
 import plotly.express as px
-from dash_bootstrap_templates import load_figure_template
-
 
 df = df.copy(deep=True)
-load_figure_template("DARKLY")
 
 
 def treemap_graph(type_):

@@ -2,14 +2,12 @@ from const import *
 import plotly.graph_objects as go
 import plotly.express as px
 from collections import Counter
-from dash_bootstrap_templates import load_figure_template
 
 df = df.copy(deep=True)
-load_figure_template("DARKLY")
 
 
 def directors_with_most_content(country, type_="TV Show"):
-    res = df[(df["director"] != "Missing") & (df["type"] == type_)].copy(deep=True)
+    res = df[(df["director"] != "Missing") & (df["type"] == type_)]
     res["from_country"] = res["country"].apply(
         lambda x: 1 if country.lower() in x.lower() else 0
     )
@@ -20,22 +18,24 @@ def directors_with_most_content(country, type_="TV Show"):
     labels, values = [tag[0] + "  " for tag in tags], [tag[1] for tag in tags]
 
     if not labels or not values:
-        fig = go.Figure(template='plotly_dark')
+        fig = go.Figure()
 
         fig.add_annotation(
             x=2.5,
             y=1.5,
             text=f"No available directors names for {country}",
-            font=dict(size=20),
+            font=dict(size=20, color='white'),
             showarrow=False,
         )
 
         fig.update_layout(
-            xaxis=dict(showgrid=False),
-            yaxis=dict(showgrid=False),
+            xaxis=dict(showgrid=False, color='white', zeroline=False),
+            yaxis=dict(showgrid=False, color='white', zeroline=False),
             paper_bgcolor='rgba(48,48,48,1.000)',
             plot_bgcolor="rgba(40,36,36,1.000)",
         )
+
+
         return fig
 
     if type_ == "Movie":

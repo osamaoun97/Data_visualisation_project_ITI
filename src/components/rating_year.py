@@ -1,5 +1,7 @@
-from ..graphs import content_by_rating, content_by_year
-
+from ..graphs.content_by_rating import content_by_rating
+from ..graphs.content_by_year import content_by_year
+import dash_bootstrap_components as dbc
+from dash import dcc
 
 def rating_year(app):
     content_by_rating_element = dbc.Col(

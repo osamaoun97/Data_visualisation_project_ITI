@@ -1,10 +1,8 @@
 import wrangle
 from const import *
 import plotly.express as px
-from dash_bootstrap_templates import load_figure_template
 
 df = df.copy(deep=True)
-load_figure_template("DARKLY")
 
 
 def dist_of_length(type_="TV Show"):

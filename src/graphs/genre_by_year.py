@@ -1,9 +1,7 @@
 from const import *
-from dash_bootstrap_templates import load_figure_template
 import plotly.express as px
 
 df = df.copy(deep=True)
-load_figure_template("DARKLY")
 
 
 def genre_by_year(genre, type_):

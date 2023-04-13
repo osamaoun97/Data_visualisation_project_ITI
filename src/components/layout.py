@@ -31,11 +31,11 @@ def create_layout(app):
                 html.Br(),
                 country_month.country_month_tabs(app),
                 html.Br(),
-                directors_actors.directors_actors_tabs(app),
+                dist_longest.dist_longest_tabs(app),
                 html.Br(),
                 treemap_genre.treemap_elem(app),
                 html.Br(),
-                dist_longest.dist_longest_tabs(app),
+                directors_actors.directors_actors_tabs(app),
                 footer.footer(app)
             ]
         ),
