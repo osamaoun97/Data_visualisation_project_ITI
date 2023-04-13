@@ -10,5 +10,4 @@ def main() -> None:
     app.layout = create_layout(app)
     app.run()
 
-
-    main()
+main()
